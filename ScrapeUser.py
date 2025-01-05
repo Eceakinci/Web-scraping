@@ -33,7 +33,7 @@ client = httpx.Client(
 
 
 def write_csv_user(user):
-    with open('insta_userdata.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    with open('instagram_userdata.csv', 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['id', 'username', 'fullname', 'biography', 'followerCount', 'category', 'isVerified']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
