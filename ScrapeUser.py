@@ -1,25 +1,6 @@
-import json
 import httpx
 import csv
-
-USERNAME_LIST = ['cristiano', 'whoop', 'globesoccer', 'saudi2034', 'mrbeast', 'leomessi',  'adidasfootball', 'fortnite',
-                  'stanley_brand', 'neymarjr', 'kyliecosmetics', 'kyliejenner', 'khy', 'therock', 'target', 'kimkardashian',
-                  'selenagomez', 'arianagrande', 'wmag', 'variety', 'taylorswift', 'voguemexico', 'beyonce', 'justinbieber',
-                  'zoesugg', 'kourtneykardash', 'khloekardashian', 'emmachamberlain', 'itsmarziapie', 'pewdiepie',
-                  'nikkietutorials', 'nimya', 'jeffreestar', 'jeffreestarcosmetics', 'jamescharles', 'dantdm', 'youtooz',
-                  'loganpaul', 'lunchly', 'fcbarcelona', 'juventus', 'drinkprime', 'jakepaul', 'mostvaluablepromotions',
-                  'netflix', 'miketyson', 'kevikodra', 'juttaleerdam', 'bretmanrock', 'lelepons', 'hudabeauty', 'zachking',
-                  'willsmith', 'observatorynorthpark', 'spotifypodcasts', 'primevideo', 'youtube', 'cloakbrand',
-                  'milliebobbybrown', 'apocalypto_12', 'markiplier', 'lizakoshy', 'aboutyou', 'toryburch', 'ddlovato',
-                  'graziausa_', 'snoopdogg', 'forstonerzonlyradio', 'harpersbazaarus', 'mileycyrus', 'tanamongeau',
-                  'jeff', 'caseyneistat', 'andrewschulz','jessicaalba', 'chrishemsworth', 'wildstateprod', 'elcorteingles',
-                  'gigihadid', 'katyperry', 'itv', 'tomholland2013', 'berobrewing', 'foodandwine', 'officialtommyfleetwood',
-                  'shawnmendes', 'interviewmag', 'johnlegend', 'yutsai88', 'billboard', 'qvc', 'nbcthevoice', 'kismet',
-                  'abc', 'jenniferhudsonshow', 'davetozer', 'ladygaga', 'khloekardashian', 'bustle', 'aliciakeys',
-                  'kingjames', 'lakers', 'nike', 'uninterrupted', 'ohiostatefb', 'kevinhart4real', 'usainbolt', 'eurosport',
-                  'digiceljamaica', 'manchesterunited', 'britishgq', 'worldathletics', 'highperformance', 'serenawilliams',
-                  'essence', 'barackobama', 'thepivot', 'vicblends', 'kamalaharris']
-
+import json
 
 client = httpx.Client(
     headers = {
@@ -64,6 +45,10 @@ def scrape_user(username: str):
 
 if __name__ == "__main__":
     all_users = []
+
+    with open('usernames.json', 'r') as f:
+        USERNAME_LIST = json.load(f)
+
     for user_name in USERNAME_LIST:
         user = list(scrape_user(user_name))
         all_users.extend(user)
