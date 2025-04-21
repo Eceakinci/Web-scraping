@@ -60,7 +60,7 @@ The main goal was to collect user profile data and detailed post information fro
 
 ---
 
-## 🛠️ Requirements
+## Requirements
 
 - Python 3.x
 
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
 
@@ -105,7 +105,7 @@ Feel free to reach out for collaboration or feedback!
 
 ---
 
-## 🌟 Acknowledgements
+## Acknowledgements
 
 - Inspired by public data projects and research in social media analysis
 - API insights based on the open structure of Instagram’s web GraphQL
